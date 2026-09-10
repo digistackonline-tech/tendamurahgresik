@@ -19,7 +19,7 @@
 <link rel="icon" href="assets/img/logo.jpeg" type="image/jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;0,900;1,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
 
 <!--
@@ -130,18 +130,28 @@
     <div class="hero__visual reveal">
       <div class="hero__art">
         <svg viewBox="0 0 400 320" class="hero__tent-illustration">
-          <path d="M200 20 L370 180 L340 180 Q200 100 60 180 L30 180 Z" fill="#FFDD00"/>
-          <path d="M200 20 L260 180 L140 180 Z" fill="#241811" opacity="0.08"/>
-          <line x1="200" y1="20" x2="200" y2="180" stroke="#241811" stroke-width="3" opacity="0.35"/>
-          <line x1="130" y1="180" x2="170" y2="100" stroke="#241811" stroke-width="2" opacity="0.25"/>
-          <line x1="270" y1="180" x2="230" y2="100" stroke="#241811" stroke-width="2" opacity="0.25"/>
-          <path d="M40 180 Q60 200 80 180 Q100 200 120 180 Q140 200 160 180 Q180 200 200 180 Q220 200 240 180 Q260 200 280 180 Q300 200 320 180 Q340 200 360 180 L360 260 L40 260 Z" fill="#fff" stroke="#241811" stroke-width="3"/>
-          <rect x="195" y="180" y2="260" x2="205" width="10" height="80" fill="#241811" opacity="0.15"/>
+          <defs>
+            <linearGradient id="goldGrad1" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FFEA8A"/>
+              <stop offset="45%" stop-color="#F3C324"/>
+              <stop offset="100%" stop-color="#C8941A"/>
+            </linearGradient>
+          </defs>
+          <path d="M200 20 L370 180 L340 180 Q200 100 60 180 L30 180 Z" fill="url(#goldGrad1)"/>
+          <path d="M200 20 L260 180 L140 180 Z" fill="#170F0A" opacity="0.1"/>
+          <line x1="200" y1="20" x2="200" y2="180" stroke="#170F0A" stroke-width="3" opacity="0.3"/>
+          <line x1="130" y1="180" x2="170" y2="100" stroke="#170F0A" stroke-width="2" opacity="0.2"/>
+          <line x1="270" y1="180" x2="230" y2="100" stroke="#170F0A" stroke-width="2" opacity="0.2"/>
+          <path d="M40 180 Q60 200 80 180 Q100 200 120 180 Q140 200 160 180 Q180 200 200 180 Q220 200 240 180 Q260 200 280 180 Q300 200 320 180 Q340 200 360 180 L360 260 L40 260 Z" fill="#fff" stroke="#170F0A" stroke-width="2.5"/>
+          <rect x="195" y="180" y2="260" x2="205" width="10" height="80" fill="#170F0A" opacity="0.12"/>
         </svg>
       </div>
       <div class="hero__badge">
-        <strong>Harga Bersaing</strong>
-        <span>Langsung dari pengelola tenda</span>
+        <div class="hero__badge-icon"><svg viewBox="0 0 24 24" class="icon"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg></div>
+        <div>
+          <strong>Harga Bersaing</strong>
+          <span>Langsung dari pengelola tenda</span>
+        </div>
       </div>
     </div>
   </div>
@@ -150,10 +160,10 @@
 <!-- ===== TRUST STRIP ===== -->
 <section class="trust-strip">
   <div class="container trust-strip__inner">
-    <div class="trust-item"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4zm-1 14-4-4 1.4-1.4L11 13.2l4.6-4.6L17 10l-6 6z"/></svg><span>Bergaransi Kerusakan</span></div>
-    <div class="trust-item"><svg viewBox="0 0 24 24" class="icon"><path d="M3 3h18v4H3V3zm2 6h14v12H5V9zm3 3v6h2v-6H8zm5 0v6h2v-6h-2z"/></svg><span>Harga Pabrik</span></div>
-    <div class="trust-item"><svg viewBox="0 0 24 24" class="icon"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0h2v-5l-3-4zM7 18.5A1.5 1.5 0 1 1 7 15.5a1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18 11l1.5 2H15v-2h3z"/></svg><span>Siap Kirim Luar Kota</span></div>
-    <div class="trust-item"><svg viewBox="0 0 24 24" class="icon"><path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zm1 11.6 4.5 2.7-.8 1.3-5.2-3.1V6h1.5v6.6z"/></svg><span>Respon Cepat</span></div>
+    <div class="trust-item"><div class="trust-item__icon"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4zm-1 14-4-4 1.4-1.4L11 13.2l4.6-4.6L17 10l-6 6z"/></svg></div><span>Bergaransi Kerusakan</span></div>
+    <div class="trust-item"><div class="trust-item__icon"><svg viewBox="0 0 24 24" class="icon"><path d="M3 3h18v4H3V3zm2 6h14v12H5V9zm3 3v6h2v-6H8zm5 0v6h2v-6h-2z"/></svg></div><span>Harga Pabrik</span></div>
+    <div class="trust-item"><div class="trust-item__icon"><svg viewBox="0 0 24 24" class="icon"><path d="M20 8h-3V4H3c-1.1 0-2 .9-2 2v11h2a3 3 0 0 0 6 0h6a3 3 0 0 0 6 0h2v-5l-3-4zM7 18.5A1.5 1.5 0 1 1 7 15.5a1.5 1.5 0 0 1 0 3zm12 0a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM18 11l1.5 2H15v-2h3z"/></svg></div><span>Siap Kirim Luar Kota</span></div>
+    <div class="trust-item"><div class="trust-item__icon"><svg viewBox="0 0 24 24" class="icon"><path d="M12 1a11 11 0 1 0 0 22 11 11 0 0 0 0-22zm1 11.6 4.5 2.7-.8 1.3-5.2-3.1V6h1.5v6.6z"/></svg></div><span>Respon Cepat</span></div>
   </div>
 </section>
 
@@ -163,11 +173,19 @@
     <div class="about__visual reveal">
       <div class="about__frame">
         <svg viewBox="0 0 300 300" class="about__art">
-          <circle cx="150" cy="150" r="140" fill="#FFF7DA"/>
+          <defs>
+            <linearGradient id="goldGrad2" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0%" stop-color="#FFEA8A"/>
+              <stop offset="45%" stop-color="#F3C324"/>
+              <stop offset="100%" stop-color="#C8941A"/>
+            </linearGradient>
+          </defs>
+          <circle cx="150" cy="150" r="140" fill="#FBF2D8"/>
+          <circle cx="150" cy="150" r="139" fill="none" stroke="#E9CC7C" stroke-width="1"/>
           <g transform="translate(50,70)">
-            <path d="M100 0 L190 100 L170 100 Q100 60 30 100 L10 100 Z" fill="#FFDD00"/>
-            <path d="M10 100 L190 100 L190 150 L10 150 Z" fill="#fff" stroke="#241811" stroke-width="3"/>
-            <line x1="100" y1="0" x2="100" y2="100" stroke="#241811" stroke-width="3" opacity="0.4"/>
+            <path d="M100 0 L190 100 L170 100 Q100 60 30 100 L10 100 Z" fill="url(#goldGrad2)"/>
+            <path d="M10 100 L190 100 L190 150 L10 150 Z" fill="#fff" stroke="#170F0A" stroke-width="2.5"/>
+            <line x1="100" y1="0" x2="100" y2="100" stroke="#170F0A" stroke-width="2.5" opacity="0.35"/>
           </g>
         </svg>
       </div>
@@ -348,14 +366,14 @@
       setiap <div class="gallery-item"> menjadi <div class="gallery-item" style="background-image:url('assets/img/gallery/nama-file.jpg')">
     -->
     <div class="gallery grid">
-      <div class="gallery-item reveal" data-label="Tenda Pesta"><span>Tenda Pesta</span></div>
-      <div class="gallery-item reveal" data-label="Tenda Pleton"><span>Tenda Pleton</span></div>
-      <div class="gallery-item reveal" data-label="Tenda Kerucut"><span>Tenda Kerucut</span></div>
-      <div class="gallery-item reveal" data-label="Tenda Gawang"><span>Tenda Gawang</span></div>
-      <div class="gallery-item reveal" data-label="Kursi & Meja"><span>Kursi &amp; Meja</span></div>
-      <div class="gallery-item reveal" data-label="Panggung & Sound"><span>Panggung &amp; Sound</span></div>
-      <div class="gallery-item reveal" data-label="Tenda Promosi"><span>Tenda Promosi</span></div>
-      <div class="gallery-item reveal" data-label="Tenda Posko"><span>Tenda Posko</span></div>
+      <div class="gallery-item reveal" data-label="Tenda Pesta"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2 2 20h20L12 2zm0 5.5L17.5 18h-11L12 7.5z"/></svg></div><span>Tenda Pesta</span></div>
+      <div class="gallery-item reveal" data-label="Tenda Pleton"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon"><path d="M2 20 12 4l10 16H2zm10-12.5L6.5 18h11L12 7.5z"/></svg></div><span>Tenda Pleton</span></div>
+      <div class="gallery-item reveal" data-label="Tenda Kerucut"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2a5 5 0 0 1 5 5c0 2-1.3 3.7-3 4.5V21h-4v-9.5C8.3 10.7 7 9 7 7a5 5 0 0 1 5-5z"/></svg></div><span>Tenda Kerucut</span></div>
+      <div class="gallery-item reveal" data-label="Tenda Gawang"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v4H4V4zm0 6h16v10H4V10zm3 2v6h2v-6H7zm7 0v6h2v-6h-2z"/></svg></div><span>Tenda Gawang</span></div>
+      <div class="gallery-item reveal" data-label="Kursi & Meja"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon"><path d="M4 18h16v2H4v-2zM6 6h2v10H6V6zm10 0h2v10h-2V6zM9 10h6v2H9v-2z"/></svg></div><span>Kursi &amp; Meja</span></div>
+      <div class="gallery-item reveal" data-label="Panggung & Sound"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon"><path d="M3 20h18v-2H3v2zM6 4v12h2V4H6zm5 4v8h2V8h-2zm5-3v11h2V5h-2z"/></svg></div><span>Panggung &amp; Sound</span></div>
+      <div class="gallery-item reveal" data-label="Tenda Promosi"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16v4H4V4zm0 6h16v10H4V10zm3 2v6h2v-6H7zm7 0v6h2v-6h-2z"/></svg></div><span>Tenda Promosi</span></div>
+      <div class="gallery-item reveal" data-label="Tenda Posko"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2 3 6v6c0 5 3.8 9.4 9 10 5.2-.6 9-5 9-10V6l-9-4z"/></svg></div><span>Tenda Posko</span></div>
     </div>
   </div>
 </section>
@@ -371,7 +389,13 @@
     <!-- TEMPLATE TESTIMONI: ganti isi quote & nama dengan testimoni pelanggan asli -->
     <div class="grid grid--testi">
       <div class="testi-card reveal">
-        <div class="testi-card__stars">★★★★★</div>
+        <div class="testi-card__stars" aria-label="5 dari 5 bintang">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+        </div>
         <p>"Tulis pengalaman pelanggan Anda tentang layanan Wiguna Tenda di sini."</p>
         <div class="testi-card__author">
           <div class="testi-card__avatar">NP</div>
@@ -379,7 +403,13 @@
         </div>
       </div>
       <div class="testi-card reveal">
-        <div class="testi-card__stars">★★★★★</div>
+        <div class="testi-card__stars" aria-label="5 dari 5 bintang">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+        </div>
         <p>"Tulis pengalaman pelanggan Anda tentang layanan Wiguna Tenda di sini."</p>
         <div class="testi-card__author">
           <div class="testi-card__avatar">NP</div>
@@ -387,7 +417,13 @@
         </div>
       </div>
       <div class="testi-card reveal">
-        <div class="testi-card__stars">★★★★★</div>
+        <div class="testi-card__stars" aria-label="5 dari 5 bintang">
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+          <svg viewBox="0 0 24 24" class="icon"><path d="M12 1.5l3.1 6.6 7.2.8-5.4 4.9 1.5 7.1L12 17.3 5.6 20.9l1.5-7.1-5.4-4.9 7.2-.8z"/></svg>
+        </div>
         <p>"Tulis pengalaman pelanggan Anda tentang layanan Wiguna Tenda di sini."</p>
         <div class="testi-card__author">
           <div class="testi-card__avatar">NP</div>
@@ -485,7 +521,7 @@
       <img src="assets/img/logo.jpeg" alt="Logo Wiguna Tenda" class="footer__logo">
       <p>Sewa &amp; jual tenda terpercaya di Gresik. Melayani acara pernikahan, hajatan, seminar, bazar, dan kebutuhan instansi.</p>
       <div class="footer__social">
-        <a href="#" aria-label="Instagram" class="social-link"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.36.47 2.43.05 1.07.06 1.42.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.36.42-2.43.47-1.07.05-1.42.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.36-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.07.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.36-.42 2.43-.47C8.95 2.01 9.3 2 12 2z"/></svg></a>
+        <a href="#" aria-label="Instagram" class="social-link"><svg viewBox="0 0 24 24" class="icon"><path d="M12 2c2.7 0 3.05.01 4.12.06 1.07.05 1.79.22 2.43.47.66.26 1.22.6 1.77 1.15.55.55.89 1.11 1.15 1.77.25.64.42 1.36.47 2.43.05 1.07.06 1.42.06 4.12s-.01 3.05-.06 4.12c-.05 1.07-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.77 4.9 4.9 0 0 1-1.77 1.15c-.64.25-1.36.42-2.43.47-1.07.05-1.42.06-4.12.06s-3.05-.01-4.12-.06c-1.07-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.77-1.15 4.9 4.9 0 0 1-1.15-1.77c-.25-.64-.42-1.36-.47-2.43C2.01 15.05 2 14.7 2 12s.01-3.05.06-4.12c.05-1.07.22-1.79.47-2.43.26-.66.6-1.22 1.15-1.77A4.9 4.9 0 0 1 5.45 2.53c.64-.25 1.36-.42 2.43-.47C8.95 2.01 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zm5.2-8.4a1.17 1.17 0 1 1-2.34 0 1.17 1.17 0 0 1 2.34 0z"/></svg></a>
         <a href="#" aria-label="Facebook" class="social-link"><svg viewBox="0 0 24 24" class="icon"><path d="M13.5 21v-7.5h2.5l.4-3H13.5V8.4c0-.87.24-1.46 1.5-1.46H16.5V4.35C16.2 4.31 15.19 4.22 14 4.22c-2.4 0-4 1.47-4 4.16V10.5H7.5v3H10V21h3.5z"/></svg></a>
         <a href="#" aria-label="TikTok" class="social-link"><svg viewBox="0 0 24 24" class="icon"><path d="M14 2h3.1c.2 1.7 1.4 3.1 3.1 3.4V8.6c-1.2 0-2.3-.3-3.2-1V15c0 3.3-2.7 6-6 6s-6-2.7-6-6 2.7-6 6-6c.4 0 .7 0 1 .1V12c-.3-.1-.6-.2-1-.2-1.7 0-3 1.3-3 3s1.3 3 3 3 3-1.3 3-3V2z"/></svg></a>
       </div>
