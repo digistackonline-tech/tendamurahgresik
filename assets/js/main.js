@@ -1,0 +1,162 @@
+/* =========================================================
+   Wiguna Tenda — tendamurahgresik.com
+   Konfigurasi utama situs. Ganti nilai di bawah ini dengan
+   data asli sebelum website dipublish.
+   ========================================================= */
+const CONFIG = {
+  // Nomor WhatsApp format internasional TANPA tanda "+" (mis. 62812xxxxxxx)
+  waNumber: "6281234567890", // TODO: ganti dengan nomor WhatsApp asli Wiguna Tenda
+  phoneDisplay: "0812-3456-7890", // TODO: ganti tampilan nomor telepon
+  address: "Jl. Raya Gresik No. 123, Kec. Gresik, Kabupaten Gresik, Jawa Timur", // TODO: alamat asli
+  email: "info@tendamurahgresik.com", // TODO: email asli jika berbeda
+  hours: "Senin - Sabtu, 08.00 - 17.00 WIB", // TODO: jam operasional asli
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+  applyConfig();
+  initWaLinks();
+  initMobileNav();
+  initTabs();
+  initAccordion();
+  initScrollReveal();
+  initStatCounters();
+  initHeaderShadow();
+  initBackToTop();
+  document.getElementById("year").textContent = new Date().getFullYear();
+});
+
+/* Isi otomatis semua elemen dengan data-config sesuai CONFIG */
+function applyConfig() {
+  document.querySelectorAll("[data-config]").forEach((el) => {
+    const key = el.getAttribute("data-config");
+    if (CONFIG[key]) el.textContent = CONFIG[key];
+  });
+}
+
+/* Bangun link wa.me otomatis untuk semua tombol/link WhatsApp */
+function initWaLinks() {
+  document.querySelectorAll(".js-wa-link").forEach((el) => {
+    const msg = el.getAttribute("data-wa-message") || "Halo Wiguna Tenda, saya ingin bertanya.";
+    el.setAttribute("href", `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`);
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener");
+  });
+}
+
+/* Menu mobile */
+function initMobileNav() {
+  const navbar = document.getElementById("navbar");
+  const toggle = document.getElementById("navToggle");
+  const menu = document.getElementById("navMenu");
+  if (!toggle) return;
+
+  toggle.addEventListener("click", () => {
+    navbar.classList.toggle("is-open");
+  });
+
+  menu.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => navbar.classList.remove("is-open"));
+  });
+}
+
+/* Tab Sewa / Jual */
+function initTabs() {
+  const tabButtons = document.querySelectorAll(".tab-btn");
+  const panels = document.querySelectorAll(".tab-panel");
+
+  tabButtons.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const target = btn.getAttribute("data-tab");
+      tabButtons.forEach((b) => b.classList.remove("is-active"));
+      panels.forEach((p) => p.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      document.querySelector(`.tab-panel[data-panel="${target}"]`).classList.add("is-active");
+    });
+  });
+}
+
+/* Accordion FAQ */
+function initAccordion() {
+  document.querySelectorAll(".accordion-header").forEach((header) => {
+    header.addEventListener("click", () => {
+      const item = header.closest(".accordion-item");
+      const wasActive = item.classList.contains("is-active");
+      item.parentElement.querySelectorAll(".accordion-item").forEach((i) => i.classList.remove("is-active"));
+      if (!wasActive) item.classList.add("is-active");
+    });
+  });
+}
+
+/* Reveal animasi saat scroll */
+function initScrollReveal() {
+  const items = document.querySelectorAll(".reveal");
+  if (!("IntersectionObserver" in window)) {
+    items.forEach((el) => el.classList.add("is-visible"));
+    return;
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("is-visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.15 }
+  );
+  items.forEach((el) => observer.observe(el));
+}
+
+/* Animasi angka statistik di hero */
+function initStatCounters() {
+  const counters = document.querySelectorAll(".hero__stat-num");
+  if (!counters.length) return;
+
+  const animate = (el) => {
+    const target = parseInt(el.getAttribute("data-count"), 10) || 0;
+    const duration = 1200;
+    const start = performance.now();
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      el.textContent = Math.floor(progress * target);
+      if (progress < 1) requestAnimationFrame(step);
+      else el.textContent = target;
+    };
+    requestAnimationFrame(step);
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    counters.forEach(animate);
+    return;
+  }
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          animate(entry.target);
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    { threshold: 0.5 }
+  );
+  counters.forEach((el) => observer.observe(el));
+}
+
+/* Bayangan header saat scroll */
+function initHeaderShadow() {
+  const navbar = document.getElementById("navbar");
+  window.addEventListener("scroll", () => {
+    navbar.classList.toggle("is-scrolled", window.scrollY > 10);
+  });
+}
+
+/* Tombol back to top */
+function initBackToTop() {
+  const btn = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    btn.classList.toggle("is-visible", window.scrollY > 500);
+  });
+  btn.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+}
