@@ -4,9 +4,11 @@
    data asli sebelum website dipublish.
    ========================================================= */
 const CONFIG = {
-  // Nomor WhatsApp format internasional TANPA tanda "+" (mis. 62812xxxxxxx)
-  waNumber: "6281234567890", // TODO: ganti dengan nomor WhatsApp asli Wiguna Tenda
-  phoneDisplay: "0812-3456-7890", // TODO: ganti tampilan nomor telepon
+  // Nomor WhatsApp format internasional TANPA tanda "+" (mis. 62812xxxxxxx).
+  // Sengaja dikosongkan dulu (customer belum deal) — selama kosong, semua
+  // tombol WhatsApp di halaman otomatis nonaktif (bukan link rusak).
+  waNumber: "", // TODO: isi nomor WhatsApp asli Wiguna Tenda kalau project lanjut
+  phoneDisplay: "Segera Hadir", // TODO: ganti jadi nomor asli begitu waNumber diisi
   address: "Jl. Raya Gresik No. 123, Kec. Gresik, Kabupaten Gresik, Jawa Timur", // TODO: alamat asli
   email: "info@tendamurahgresik.com", // TODO: email asli jika berbeda
   hours: "Senin - Sabtu, 08.00 - 17.00 WIB", // TODO: jam operasional asli
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", () => {
   applyConfig();
   initTracking();
   initWaLinks();
+  initPhoneLink();
   initMobileNav();
   initTabs();
   initAccordion();
@@ -43,15 +46,37 @@ function applyConfig() {
 }
 
 /* Bangun link wa.me otomatis untuk semua tombol/link WhatsApp,
-   dan catat sebagai konversi Google Ads / Meta Pixel setiap kali diklik. */
+   dan catat sebagai konversi Google Ads / Meta Pixel setiap kali diklik.
+   Kalau waNumber belum diisi, tombol dibuat nonaktif (bukan link rusak). */
 function initWaLinks() {
+  const hasNumber = Boolean(CONFIG.waNumber);
   document.querySelectorAll(".js-wa-link").forEach((el) => {
+    if (!hasNumber) {
+      el.setAttribute("href", "#");
+      el.classList.add("is-disabled");
+      el.setAttribute("aria-disabled", "true");
+      el.title = "Nomor WhatsApp belum tersedia";
+      return;
+    }
     const msg = el.getAttribute("data-wa-message") || "Halo Wiguna Tenda, saya ingin bertanya.";
     el.setAttribute("href", `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`);
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener");
     el.addEventListener("click", trackWaClick);
   });
+}
+
+/* Link telepon di top bar mengikuti waNumber juga; nonaktif kalau kosong. */
+function initPhoneLink() {
+  const link = document.getElementById("topbarPhoneLink");
+  if (!link) return;
+  if (CONFIG.waNumber) {
+    link.setAttribute("href", `tel:+${CONFIG.waNumber}`);
+  } else {
+    link.setAttribute("href", "#");
+    link.classList.add("is-disabled");
+    link.setAttribute("aria-disabled", "true");
+  }
 }
 
 /* Muat script Google Ads/Analytics (gtag.js) dan Meta Pixel HANYA jika

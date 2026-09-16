@@ -24,14 +24,17 @@ Semua data kontak diatur di **satu tempat**: [assets/js/main.js](assets/js/main.
 
 | Field | Placeholder saat ini | Keterangan |
 |---|---|---|
-| `waNumber` | `6281234567890` | Nomor WhatsApp asli, format `62...` tanpa `+` atau spasi |
-| `phoneDisplay` | `0812-3456-7890` | Tampilan nomor telepon di halaman |
+| `waNumber` | *(kosong)* | Nomor WhatsApp asli, format `62...` tanpa `+` atau spasi |
+| `phoneDisplay` | `Segera Hadir` | Tampilan nomor telepon di halaman |
 | `address` | `Jl. Raya Gresik No. 123, ...` | Alamat lengkap toko/workshop |
 | `email` | `info@tendamurahgresik.com` | Email bisnis aktif |
 | `hours` | `Senin - Sabtu, 08.00 - 17.00 WIB` | Jam operasional |
 
-Setelah `waNumber` diganti, **semua** tombol "Chat WhatsApp" di seluruh halaman (navbar, hero, kartu
-layanan, kontak, tombol mengambang) otomatis terhubung ke nomor yang benar — tidak perlu edit satu per satu.
+`waNumber` sengaja dikosongkan dulu (customer belum deal project ini). **Selama kosong, semua tombol
+"Chat WhatsApp" di seluruh halaman (navbar, hero, kartu layanan, kontak, tombol mengambang) otomatis
+tampil nonaktif** (redup, tidak bisa diklik) — bukan link yang rusak. Begitu `waNumber` diisi nomor asli,
+semua tombol otomatis aktif dan terhubung ke nomor tersebut, tanpa perlu edit satu per satu. Jangan lupa
+juga isi kembali `phoneDisplay` dengan format nomor yang ingin ditampilkan.
 
 Bagian lain yang juga masih placeholder dan perlu dilengkapi manual di `index.html`:
 
