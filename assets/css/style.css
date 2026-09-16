@@ -170,7 +170,7 @@ p { margin: 0 0 1em; }
   -webkit-mask-image: radial-gradient(ellipse 70% 60% at 75% 20%, black 0%, transparent 70%);
 }
 .hero__inner { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
-.hero__title { font-size: clamp(32px, 4.2vw, 52px); font-weight: 800; margin-bottom: 20px; }
+.hero__title { font-size: clamp(26px, 3.2vw, 42px); font-weight: 800; line-height: 1.15; margin-bottom: 20px; }
 .hero__title em { font-style: normal; color: var(--gold-700); font-weight: 800; }
 .hero__desc { font-size: 16.5px; color: var(--gray-600); max-width: 540px; margin-bottom: 30px; }
 .hero__actions { display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 44px; }
