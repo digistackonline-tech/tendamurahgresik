@@ -1,7 +1,8 @@
 # Wiguna Tenda — tendamurahgresik.com
 
-Landing page statis (HTML/CSS/JS, tanpa framework/build step) untuk bisnis sewa & jual tenda
-Wiguna Tenda di Gresik.
+Landing page statis (HTML/CSS/JS, tanpa framework/build step) untuk Wiguna Tenda — perusahaan tenda
+profesional (produksi tenda &amp; terpal custom + sewa tenda event) berpengalaman 11+ tahun, berbasis
+di Gresik. Konten mengikuti profil perusahaan resmi (`deskripsi wiguna tenda.pdf` dari klien).
 
 ## Struktur folder
 
@@ -18,27 +19,28 @@ assets/
     gallery/            # taruh foto galeri asli di sini
 ```
 
-## ⚠️ Data placeholder yang WAJIB diganti sebelum publish
+## ✅ Data kontak asli & ⚠️ yang masih placeholder
 
 Semua data kontak diatur di **satu tempat**: [assets/js/main.js](assets/js/main.js), bagian `CONFIG` di baris paling atas.
 
-| Field | Placeholder saat ini | Keterangan |
+| Field | Nilai saat ini | Keterangan |
 |---|---|---|
-| `waNumber` | *(kosong)* | Nomor WhatsApp asli, format `62...` tanpa `+` atau spasi |
-| `phoneDisplay` | `Segera Hadir` | Tampilan nomor telepon di halaman |
-| `address` | `Jl. Raya Gresik No. 123, ...` | Alamat lengkap toko/workshop |
-| `email` | `info@tendamurahgresik.com` | Email bisnis aktif |
-| `hours` | `Senin - Sabtu, 08.00 - 17.00 WIB` | Jam operasional |
+| `waNumber` | `6289510532984` | **Asli** — Rendra Oktaviantoro, admin utama. Dipakai semua tombol WA umum di halaman. |
+| `phoneDisplay` | `0895-1053-2984` | **Asli** — tampilan nomor Rendra |
+| `waNumber2` | `62895351287502` | **Asli** — Sherly Charima Dewi, admin kedua. Dipakai khusus tombol dengan `data-wa-number-key="waNumber2"` (section Kontak). |
+| `phoneDisplay2` | `0895-3512-87502` | **Asli** — tampilan nomor Sherly |
+| `address` | `Jl. Raya Gresik No. 123, ...` | ⚠️ Masih **placeholder**, alamat asli belum tersedia dari klien |
+| `email` | `info@tendamurahgresik.com` | ⚠️ Masih **placeholder** |
+| `hours` | `Senin - Sabtu, 08.00 - 17.00 WIB` | ⚠️ Masih **placeholder** |
 
-`waNumber` sengaja dikosongkan dulu (customer belum deal project ini). **Selama kosong, semua tombol
-"Chat WhatsApp" di seluruh halaman (navbar, hero, kartu layanan, kontak, tombol mengambang) otomatis
-tampil nonaktif** (redup, tidak bisa diklik) — bukan link yang rusak. Begitu `waNumber` diisi nomor asli,
-semua tombol otomatis aktif dan terhubung ke nomor tersebut, tanpa perlu edit satu per satu. Jangan lupa
-juga isi kembali `phoneDisplay` dengan format nomor yang ingin ditampilkan.
+Kalau ada perubahan nomor WA di kemudian hari, tinggal edit `waNumber`/`waNumber2` di satu tempat ini —
+semua tombol "Chat WhatsApp" di seluruh halaman (navbar, hero, kartu layanan, galeri, kontak, tombol
+mengambang) otomatis ikut terhubung ke nomor yang benar. Kalau salah satu nomor dikosongkan lagi,
+tombol yang merujuk ke nomor itu otomatis tampil nonaktif (redup, tidak bisa diklik) — bukan link rusak.
 
 Bagian lain yang juga masih placeholder dan perlu dilengkapi manual di `index.html`:
 
-- **Statistik hero** (`10+ Tahun Pengalaman`, `500+ Event`, dll.) — cari `data-count` di section `#beranda`.
+- **Statistik hero** (`500+ Event Terlaksana`, dll. — `11+ Tahun Pengalaman` sudah data asli) — cari `data-count` di section `#beranda`.
 - **Galeri foto** (section `#galeri`) — saat ini berupa kartu ikon+judul kategori. Untuk memasang foto asli:
   1. Taruh file foto di `assets/img/gallery/`.
   2. Pada setiap `<div class="gallery-item" ...>`, tambahkan `style="background-image:url('assets/img/gallery/nama-file.jpg')"`.
@@ -49,7 +51,7 @@ Bagian lain yang juga masih placeholder dan perlu dilengkapi manual di `index.ht
 - **Link sosial media** (Instagram/Facebook/TikTok, di top bar & footer) — masih `href="#"`, ganti dengan
   URL profil asli.
 - **Structured data LocalBusiness** (`<script type="application/ld+json">` di `<head>` index.html) — field
-  `telephone` dan `address` masih placeholder, samakan dengan data asli yang dipakai di `CONFIG`.
+  `telephone` sudah nomor asli (Rendra), tapi `address` masih placeholder, samakan begitu alamat asli ada.
 
 ## 📈 Tracking iklan (Google Ads / GA4 / Meta Pixel)
 

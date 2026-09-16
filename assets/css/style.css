@@ -230,17 +230,12 @@ p { margin: 0 0 1em; }
 .about__list li { display: flex; align-items: center; gap: 12px; font-size: 15px; color: var(--gray-700); }
 .icon--check { width: 22px; height: 22px; color: var(--dark); flex-shrink: 0; background: var(--gold-grad); border-radius: 50%; padding: 4px; }
 
-/* ---------- Tabs ---------- */
-.tabs { display: flex; justify-content: center; gap: 8px; margin-bottom: 46px; background: var(--cream-200); padding: 6px; border-radius: 50px; width: fit-content; margin-left: auto; margin-right: auto; }
-.tab-btn {
-  background: transparent; border: none; color: var(--gray-700); font-family: var(--ff-body);
-  font-weight: 600; font-size: 14px; padding: 12px 28px; border-radius: 50px; cursor: pointer; transition: all .25s ease;
+/* ---------- Layanan subtitle ---------- */
+.layanan-subtitle {
+  font-size: 19px; font-weight: 700; color: var(--dark); margin: 0 0 22px;
+  padding-bottom: 12px; border-bottom: 2px solid var(--line);
 }
-.tab-btn.is-active { background: var(--dark); color: var(--gold-200); box-shadow: var(--shadow-sm); }
-.tab-btn:not(.is-active):hover { color: var(--dark); }
-.tab-panel { display: none; }
-.tab-panel.is-active { display: block; animation: fadeIn .5s ease; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(10px);} to { opacity: 1; transform: translateY(0);} }
+.layanan-subtitle:not(:first-of-type) { margin-top: 54px; }
 
 /* ---------- Grid / Cards ---------- */
 .grid { display: grid; gap: 26px; }
@@ -359,7 +354,10 @@ p { margin: 0 0 1em; }
 .contact__icon svg { width: 22px; height: 22px; fill: currentColor; }
 .contact__item strong { display: block; font-size: 13.5px; color: var(--gold-200); margin-bottom: 3px; letter-spacing: .02em; }
 .contact__item p { margin: 0; font-size: 14.5px; color: var(--cream-200); }
-.contact__info .btn { position: relative; z-index: 1; align-self: flex-start; margin-top: 8px; }
+.contact__item p + p { margin-top: 3px; }
+.contact__wa-buttons { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 12px; margin-top: 8px; }
+.contact__wa-buttons .btn--outline { border-color: var(--gold-200); color: var(--gold-200); }
+.contact__wa-buttons .btn--outline:hover { background: var(--gold-200); color: var(--dark); }
 .contact__map { border-radius: var(--radius); overflow: hidden; min-height: 360px; box-shadow: var(--shadow-md); border: 1px solid var(--line); }
 .contact__map iframe { width: 100%; height: 100%; min-height: 360px; filter: grayscale(.15) contrast(1.02); }
 

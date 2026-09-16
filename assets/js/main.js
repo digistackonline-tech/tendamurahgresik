@@ -5,10 +5,16 @@
    ========================================================= */
 const CONFIG = {
   // Nomor WhatsApp format internasional TANPA tanda "+" (mis. 62812xxxxxxx).
-  // Sengaja dikosongkan dulu (customer belum deal) — selama kosong, semua
-  // tombol WhatsApp di halaman otomatis nonaktif (bukan link rusak).
-  waNumber: "", // TODO: isi nomor WhatsApp asli Wiguna Tenda kalau project lanjut
-  phoneDisplay: "Segera Hadir", // TODO: ganti jadi nomor asli begitu waNumber diisi
+  // Dipakai oleh SEMUA tombol "Chat WhatsApp" umum di halaman (navbar, hero,
+  // kartu layanan, galeri, tombol mengambang) — admin utama.
+  waNumber: "6289510532984", // Rendra Oktaviantoro
+  phoneDisplay: "0895-1053-2984",
+  waName: "Rendra Oktaviantoro",
+  // Admin kedua — dipakai khusus oleh tombol berlabel data-wa-number-key="waNumber2"
+  // (dipasang di section Kontak, mengikuti pola "WhatsApp Admin 1/2").
+  waNumber2: "62895351287502", // Sherly Charima Dewi
+  phoneDisplay2: "0895-3512-87502",
+  waName2: "Sherly Charima Dewi",
   address: "Jl. Raya Gresik No. 123, Kec. Gresik, Kabupaten Gresik, Jawa Timur", // TODO: alamat asli
   email: "info@tendamurahgresik.com", // TODO: email asli jika berbeda
   hours: "Senin - Sabtu, 08.00 - 17.00 WIB", // TODO: jam operasional asli
@@ -28,7 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
   initWaLinks();
   initPhoneLink();
   initMobileNav();
-  initTabs();
   initAccordion();
   initScrollReveal();
   initStatCounters();
@@ -47,11 +52,15 @@ function applyConfig() {
 
 /* Bangun link wa.me otomatis untuk semua tombol/link WhatsApp,
    dan catat sebagai konversi Google Ads / Meta Pixel setiap kali diklik.
-   Kalau waNumber belum diisi, tombol dibuat nonaktif (bukan link rusak). */
+   Sebuah tombol bisa menunjuk ke admin kedua dengan
+   data-wa-number-key="waNumber2" (dipakai di section Kontak); tanpa
+   atribut itu, tombol memakai CONFIG.waNumber (admin utama). Kalau
+   nomor yang dirujuk masih kosong, tombol otomatis dibuat nonaktif. */
 function initWaLinks() {
-  const hasNumber = Boolean(CONFIG.waNumber);
   document.querySelectorAll(".js-wa-link").forEach((el) => {
-    if (!hasNumber) {
+    const numberKey = el.getAttribute("data-wa-number-key") || "waNumber";
+    const number = CONFIG[numberKey];
+    if (!number) {
       el.setAttribute("href", "#");
       el.classList.add("is-disabled");
       el.setAttribute("aria-disabled", "true");
@@ -59,7 +68,7 @@ function initWaLinks() {
       return;
     }
     const msg = el.getAttribute("data-wa-message") || "Halo Wiguna Tenda, saya ingin bertanya.";
-    el.setAttribute("href", `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`);
+    el.setAttribute("href", `https://wa.me/${number}?text=${encodeURIComponent(msg)}`);
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener");
     el.addEventListener("click", trackWaClick);
@@ -133,22 +142,6 @@ function initMobileNav() {
 
   menu.querySelectorAll("a").forEach((link) => {
     link.addEventListener("click", () => navbar.classList.remove("is-open"));
-  });
-}
-
-/* Tab Sewa / Jual */
-function initTabs() {
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const panels = document.querySelectorAll(".tab-panel");
-
-  tabButtons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const target = btn.getAttribute("data-tab");
-      tabButtons.forEach((b) => b.classList.remove("is-active"));
-      panels.forEach((p) => p.classList.remove("is-active"));
-      btn.classList.add("is-active");
-      document.querySelector(`.tab-panel[data-panel="${target}"]`).classList.add("is-active");
-    });
   });
 }
 
