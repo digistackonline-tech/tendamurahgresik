@@ -10,10 +10,19 @@ const CONFIG = {
   address: "Jl. Raya Gresik No. 123, Kec. Gresik, Kabupaten Gresik, Jawa Timur", // TODO: alamat asli
   email: "info@tendamurahgresik.com", // TODO: email asli jika berbeda
   hours: "Senin - Sabtu, 08.00 - 17.00 WIB", // TODO: jam operasional asli
+
+  // --- Tracking iklan (opsional, kosongkan jika belum punya akun) ---
+  // Dipakai untuk mengukur konversi (klik WhatsApp) dari Google Ads.
+  // Isi setelah kampanye Google Ads dibuat: Tools & Settings > Conversions.
+  googleAdsId: "", // contoh: "AW-XXXXXXXXX"
+  googleAdsConversionLabel: "", // contoh: "AbCdEfGhIjKlMnOp"
+  ga4Id: "", // opsional, Measurement ID Google Analytics 4, contoh: "G-XXXXXXXXXX"
+  metaPixelId: "", // opsional, Meta (Facebook/Instagram) Pixel ID, jika nanti pasang iklan FB/IG
 };
 
 document.addEventListener("DOMContentLoaded", () => {
   applyConfig();
+  initTracking();
   initWaLinks();
   initMobileNav();
   initTabs();
@@ -33,14 +42,57 @@ function applyConfig() {
   });
 }
 
-/* Bangun link wa.me otomatis untuk semua tombol/link WhatsApp */
+/* Bangun link wa.me otomatis untuk semua tombol/link WhatsApp,
+   dan catat sebagai konversi Google Ads / Meta Pixel setiap kali diklik. */
 function initWaLinks() {
   document.querySelectorAll(".js-wa-link").forEach((el) => {
     const msg = el.getAttribute("data-wa-message") || "Halo Wiguna Tenda, saya ingin bertanya.";
     el.setAttribute("href", `https://wa.me/${CONFIG.waNumber}?text=${encodeURIComponent(msg)}`);
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener");
+    el.addEventListener("click", trackWaClick);
   });
+}
+
+/* Muat script Google Ads/Analytics (gtag.js) dan Meta Pixel HANYA jika
+   ID-nya sudah diisi di CONFIG. Selama masih kosong, tidak ada script
+   pihak ketiga yang dimuat sama sekali. */
+function initTracking() {
+  if (CONFIG.googleAdsId || CONFIG.ga4Id) {
+    const primaryId = CONFIG.googleAdsId || CONFIG.ga4Id;
+    const script = document.createElement("script");
+    script.async = true;
+    script.src = `https://www.googletagmanager.com/gtag/js?id=${primaryId}`;
+    document.head.appendChild(script);
+
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = function gtag() { window.dataLayer.push(arguments); };
+    gtag("js", new Date());
+    if (CONFIG.googleAdsId) gtag("config", CONFIG.googleAdsId);
+    if (CONFIG.ga4Id) gtag("config", CONFIG.ga4Id);
+  }
+
+  if (CONFIG.metaPixelId) {
+    /* eslint-disable */
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    /* eslint-enable */
+    window.fbq("init", CONFIG.metaPixelId);
+    window.fbq("track", "PageView");
+  }
+}
+
+/* Kirim event konversi saat tombol WhatsApp diklik (lead untuk Google Ads/Meta). */
+function trackWaClick() {
+  if (window.gtag && CONFIG.googleAdsId && CONFIG.googleAdsConversionLabel) {
+    window.gtag("event", "conversion", {
+      send_to: `${CONFIG.googleAdsId}/${CONFIG.googleAdsConversionLabel}`,
+    });
+  }
+  if (window.fbq) window.fbq("track", "Contact");
 }
 
 /* Menu mobile */

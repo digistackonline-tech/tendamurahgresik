@@ -16,11 +16,34 @@
 <meta property="og:image" content="assets/img/logo.jpeg">
 <meta property="og:locale" content="id_ID">
 
-<link rel="icon" href="assets/img/logo.jpeg" type="image/jpeg">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/css/style.css">
+
+<!-- Structured data untuk Google (LocalBusiness) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Wiguna Tenda",
+  "image": "https://tendamurahgresik.com/assets/img/logo.jpeg",
+  "url": "https://tendamurahgresik.com/",
+  "telephone": "+6281234567890",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Jl. Raya Gresik No. 123",
+    "addressLocality": "Gresik",
+    "addressRegion": "Jawa Timur",
+    "addressCountry": "ID"
+  },
+  "areaServed": "Gresik",
+  "openingHours": "Mo-Sa 08:00-17:00"
+}
+</script>
 
 <!--
   ======================================================================
@@ -30,6 +53,9 @@
     -> assets/js/main.js  (bagian "const CONFIG = { ... }")
   Yang perlu diganti: nomor WhatsApp, alamat, email, jam operasional,
   link sosial media, dan foto-foto asli di folder assets/img/.
+  Data yang sama juga perlu disamakan di blok "LocalBusiness" JSON-LD
+  tepat di atas (telephone & address) dan di assets/js/main.js (bagian
+  googleAdsId/ga4Id/metaPixelId untuk tracking iklan).
   Lihat README.md untuk daftar lengkap.
   ======================================================================
 -->

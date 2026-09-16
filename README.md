@@ -7,11 +7,14 @@ Wiguna Tenda di Gresik.
 
 ```
 index.html
+robots.txt
+sitemap.xml
 assets/
   css/style.css
   js/main.js
   img/
-    logo.jpeg          # logo klien
+    logo.jpeg          # logo klien (banner, dipakai untuk og:image)
+    favicon.png         # logo di-crop persegi, dipakai untuk tab browser
     gallery/            # taruh foto galeri asli di sini
 ```
 
@@ -42,8 +45,34 @@ Bagian lain yang juga masih placeholder dan perlu dilengkapi manual di `index.ht
   tersedia, ganti `src` iframe dengan link embed Google Maps yang sesuai (Google Maps → Bagikan → Sematkan peta).
 - **Link sosial media** (Instagram/Facebook/TikTok, di top bar & footer) — masih `href="#"`, ganti dengan
   URL profil asli.
-- **Favicon/logo** — saat ini memakai file JPEG asli dari klien. Jika ingin versi PNG transparan/optimized,
-  ganti `assets/img/logo.jpeg` (jaga nama file yang sama, atau update referensinya di `index.html`).
+- **Structured data LocalBusiness** (`<script type="application/ld+json">` di `<head>` index.html) — field
+  `telephone` dan `address` masih placeholder, samakan dengan data asli yang dipakai di `CONFIG`.
+
+## 📈 Tracking iklan (Google Ads / GA4 / Meta Pixel)
+
+Karena strategi marketing utama memakai **Google Ads** (bukan SEO organik) untuk kata kunci seperti
+"tenda murah", yang paling penting adalah *conversion tracking* — mengukur setiap klik tombol WhatsApp
+sebagai hasil dari iklan.
+
+Semua diatur di `assets/js/main.js`, bagian `CONFIG`:
+
+| Field | Kapan diisi |
+|---|---|
+| `googleAdsId` | Setelah kampanye Google Ads dibuat. Ambil di **Tools & Settings → Conversions** (format `AW-XXXXXXXXX`). |
+| `googleAdsConversionLabel` | Label dari action konversi yang sama (mis. "Kirim WhatsApp"). |
+| `ga4Id` | Opsional, Measurement ID dari Google Analytics 4 (`G-XXXXXXXXXX`) untuk melihat traffic secara umum. |
+| `metaPixelId` | Opsional, jika nanti juga pasang iklan Facebook/Instagram. |
+
+Selama field-field ini masih kosong, **tidak ada script tracking pihak ketiga yang dimuat sama sekali**
+(situs tetap ringan). Begitu diisi, setiap klik tombol "Chat WhatsApp" di seluruh halaman otomatis
+terkirim sebagai event konversi ke Google Ads (dan/atau Meta Pixel) — tidak perlu pasang kode manual di
+setiap tombol.
+
+## 🔍 File SEO dasar
+
+`robots.txt` dan `sitemap.xml` di root project sudah disiapkan (mengizinkan semua crawler, menunjuk ke
+`https://tendamurahgresik.com/sitemap.xml`). Ini membantu kualitas halaman meski fokus akuisisi utamanya
+lewat Google Ads, dan tetap berguna jika nanti ingin menambah upaya SEO organik.
 
 ## Menjalankan secara lokal
 
