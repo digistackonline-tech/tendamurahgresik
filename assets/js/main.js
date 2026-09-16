@@ -28,11 +28,34 @@ const CONFIG = {
   metaPixelId: "", // opsional, Meta (Facebook/Instagram) Pixel ID, jika nanti pasang iklan FB/IG
 };
 
+/* =========================================================
+   GALERI FOTO
+   Cara pasang foto asli, TANPA edit HTML/CSS sama sekali:
+     1. Taruh file foto (jpg/png, disarankan persegi/square) di folder
+        assets/img/gallery/
+     2. Isi nama filenya di field "photo" baris yang sesuai di bawah ini,
+        mis. photo: "tenda-kerucut-1.jpg"
+   Selama "photo" masih kosong ("") kotaknya tetap tampil sebagai
+   placeholder ikon seperti sekarang. Urutan/jumlah item boleh diubah
+   bebas — cukup tambah atau hapus baris di array ini.
+   ========================================================= */
+const GALLERY = [
+  { label: "Tenda Kerucut", photo: "", icon: '<path d="M12 2a5 5 0 0 1 5 5c0 2-1.3 3.7-3 4.5V21h-4v-9.5C8.3 10.7 7 9 7 7a5 5 0 0 1 5-5z"/>' },
+  { label: "Tenda Limas", photo: "", icon: '<path d="M12 2 2 20h20L12 2zm0 5.5L17.5 18h-11L12 7.5z"/>' },
+  { label: "Tenda Promosi", photo: "", icon: '<path d="M4 4h16v4H4V4zm0 6h16v10H4V10zm3 2v6h2v-6H7zm7 0v6h2v-6h-2z"/>' },
+  { label: "Tenda Lipat", photo: "", icon: '<path d="M12 3 21 8 12 13 3 8Z M3 13 12 18 21 13 21 15.5 12 20.5 3 15.5Z"/>' },
+  { label: "Tenda Pesta", photo: "", icon: '<path d="M2 20 12 4l10 16H2zm10-12.5L6.5 18h11L12 7.5z"/>' },
+  { label: "Kanopi Kain", photo: "", icon: '<path d="M3 12A9 9 0 0 1 21 12Z M5 12 7 12 7 19 5 19Z M17 12 19 12 19 19 17 19Z"/>' },
+  { label: "Payung Taman", photo: "", icon: '<path d="M2 12A10 10 0 0 1 22 12Z M11 11 13 11 13 20 11 20Z"/>' },
+  { label: "Tenda Custom", photo: "", icon: '<rect x="5" y="5" width="14" height="2" rx="1"/><circle cx="9" cy="6" r="2"/><rect x="5" y="11" width="14" height="2" rx="1"/><circle cx="15" cy="12" r="2"/><rect x="5" y="17" width="14" height="2" rx="1"/><circle cx="11" cy="18" r="2"/>' },
+];
+
 document.addEventListener("DOMContentLoaded", () => {
   applyConfig();
   initTracking();
   initWaLinks();
   initPhoneLink();
+  renderGallery();
   initMobileNav();
   initAccordion();
   initScrollReveal();
@@ -127,6 +150,21 @@ function trackWaClick() {
     });
   }
   if (window.fbq) window.fbq("track", "Contact");
+}
+
+/* Bangun grid galeri dari daftar GALLERY di atas. Item dengan "photo"
+   terisi menampilkan foto asli (cover + judul di bawahnya); item yang
+   "photo"-nya masih kosong menampilkan placeholder ikon seperti biasa. */
+function renderGallery() {
+  const grid = document.getElementById("galleryGrid");
+  if (!grid) return;
+  grid.innerHTML = GALLERY.map((item) => {
+    if (item.photo) {
+      const url = `assets/img/gallery/${item.photo}`;
+      return `<div class="gallery-item gallery-item--photo reveal" style="background-image:url('${url}')"><span>${item.label}</span></div>`;
+    }
+    return `<div class="gallery-item reveal"><div class="gallery-item__ring"><svg viewBox="0 0 24 24" class="icon">${item.icon}</svg></div><span>${item.label}</span></div>`;
+  }).join("");
 }
 
 /* Menu mobile */

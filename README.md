@@ -41,9 +41,13 @@ tombol yang merujuk ke nomor itu otomatis tampil nonaktif (redup, tidak bisa dik
 Bagian lain yang juga masih placeholder dan perlu dilengkapi manual di `index.html`:
 
 - **Statistik hero** (`500+ Event Terlaksana`, dll. — `11+ Tahun Pengalaman` sudah data asli) — cari `data-count` di section `#beranda`.
-- **Galeri foto** (section `#galeri`) — saat ini berupa kartu ikon+judul kategori. Untuk memasang foto asli:
-  1. Taruh file foto di `assets/img/gallery/`.
-  2. Pada setiap `<div class="gallery-item" ...>`, tambahkan `style="background-image:url('assets/img/gallery/nama-file.jpg')"`.
+- **Galeri foto** (section `#galeri`) — dibangun otomatis oleh JavaScript dari daftar `GALLERY` di
+  [assets/js/main.js](assets/js/main.js). Untuk memasang foto asli, **tidak perlu edit HTML/CSS**:
+  1. Taruh file foto (jpg/png, disarankan persegi) di `assets/img/gallery/`.
+  2. Isi nama filenya di field `photo` pada baris yang sesuai di array `GALLERY`, misalnya
+     `photo: "tenda-kerucut-1.jpg"`.
+  Selama `photo` masih kosong (`""`), kotak itu tetap tampil sebagai placeholder ikon. Urutan atau
+  jumlah kotak juga bebas diubah — tinggal tambah/hapus baris di array `GALLERY`.
 - **Testimoni pelanggan** (section `#testimoni`) — masih berupa template kosong ("Nama Pelanggan"). Ganti
   dengan testimoni nyata dari pelanggan setelah tersedia.
 - **Peta lokasi** (section `#kontak`) — saat ini menampilkan peta umum area Gresik. Setelah alamat pasti
