@@ -44,9 +44,9 @@ const GALLERY = [
   { label: "Tenda Limas", photo: "tenda-limas.jpg", icon: '<path d="M12 2 2 20h20L12 2zm0 5.5L17.5 18h-11L12 7.5z"/>' },
   { label: "Tenda Promosi", photo: "tenda-promosi.jpg", icon: '<path d="M4 4h16v4H4V4zm0 6h16v10H4V10zm3 2v6h2v-6H7zm7 0v6h2v-6h-2z"/>' },
   { label: "Tenda Lipat", photo: "tenda-lipat.jpg", icon: '<path d="M12 3 21 8 12 13 3 8Z M3 13 12 18 21 13 21 15.5 12 20.5 3 15.5Z"/>' },
-  { label: "Tenda Pesta", photo: "", icon: '<path d="M2 20 12 4l10 16H2zm10-12.5L6.5 18h11L12 7.5z"/>' },
-  { label: "Kanopi Kain", photo: "", icon: '<path d="M3 12A9 9 0 0 1 21 12Z M5 12 7 12 7 19 5 19Z M17 12 19 12 19 19 17 19Z"/>' },
-  { label: "Payung Taman", photo: "", icon: '<path d="M2 12A10 10 0 0 1 22 12Z M11 11 13 11 13 20 11 20Z"/>' },
+  { label: "Tenda Pesta", photo: "tenda-pesta.jpg", icon: '<path d="M2 20 12 4l10 16H2zm10-12.5L6.5 18h11L12 7.5z"/>' },
+  { label: "Kanopi Kain", photo: "kanopi-kain.jpg", icon: '<path d="M3 12A9 9 0 0 1 21 12Z M5 12 7 12 7 19 5 19Z M17 12 19 12 19 19 17 19Z"/>' },
+  { label: "Payung Taman", photo: "payung-taman.jpg", icon: '<path d="M2 12A10 10 0 0 1 22 12Z M11 11 13 11 13 20 11 20Z"/>' },
   { label: "Tenda Custom", photo: "tenda-custom.jpg", icon: '<rect x="5" y="5" width="14" height="2" rx="1"/><circle cx="9" cy="6" r="2"/><rect x="5" y="11" width="14" height="2" rx="1"/><circle cx="15" cy="12" r="2"/><rect x="5" y="17" width="14" height="2" rx="1"/><circle cx="11" cy="18" r="2"/>' },
 ];
 
