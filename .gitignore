@@ -3,3 +3,6 @@ Thumbs.db
 node_modules/
 .vscode/
 *.log
+
+# Foto sumber asli (belum dikompres) - versi web-nya ada di assets/img/gallery/
+assets/Porto/
