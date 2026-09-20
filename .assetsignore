@@ -1,0 +1,10 @@
+# File/folder yang TIDAK boleh ikut di-deploy sebagai aset publik oleh
+# Cloudflare Workers/Pages (dibaca oleh proses build Cloudflare, mirip
+# .gitignore). Tanpa file ini, seluruh riwayat git (folder .git) ikut
+# ter-upload dan bisa diakses publik lewat URL, mis. /.git/config.
+.git
+.gitignore
+.assetsignore
+.wrangler
+wrangler.jsonc
+README.md
