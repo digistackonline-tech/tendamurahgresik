@@ -289,6 +289,7 @@ p { margin: 0 0 1em; }
 .grid--why { grid-template-columns: repeat(4, 1fr); }
 .why-card { text-align: center; padding: 34px 22px; border-radius: var(--radius); transition: background .3s ease, transform .3s ease; }
 .why-card:hover { background: var(--cream); transform: translateY(-4px); }
+.section--alt .why-card:hover { background: var(--white); box-shadow: var(--shadow-sm); }
 .why-card__icon {
   width: 72px; height: 72px; margin: 0 auto 20px; border-radius: 50%; background: var(--dark); color: var(--gold-400);
   display: flex; align-items: center; justify-content: center; position: relative;
