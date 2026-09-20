@@ -29,7 +29,7 @@ Semua data kontak diatur di **satu tempat**: [assets/js/main.js](assets/js/main.
 | `phoneDisplay` | `0895-1053-2984` | **Asli** — tampilan nomor Rendra |
 | `waNumber2` | `62895351287502` | **Asli** — Sherly Charima Dewi, admin kedua. Dipakai khusus tombol dengan `data-wa-number-key="waNumber2"` (section Kontak). |
 | `phoneDisplay2` | `0895-3512-87502` | **Asli** — tampilan nomor Sherly |
-| `address` | `Jl. Raya Gresik No. 123, ...` | ⚠️ Masih **placeholder**, alamat asli belum tersedia dari klien |
+| `address` | `Desa Banjaran, Kec. Driyorejo, ...` | **Asli** (level desa/kecamatan, dari titik lokasi -7.352661,112.576803). Nama jalan & nomor bisa dilengkapi lagi kalau ada. |
 | `email` | `info@tendamurahgresik.com` | ⚠️ Masih **placeholder** |
 | `hours` | `Senin - Sabtu, 08.00 - 17.00 WIB` | ⚠️ Masih **placeholder** |
 
@@ -50,12 +50,12 @@ Bagian lain yang juga masih placeholder dan perlu dilengkapi manual di `index.ht
   jumlah kotak juga bebas diubah — tinggal tambah/hapus baris di array `GALLERY`.
 - **Testimoni pelanggan** (section `#testimoni`) — masih berupa template kosong ("Nama Pelanggan"). Ganti
   dengan testimoni nyata dari pelanggan setelah tersedia.
-- **Peta lokasi** (section `#kontak`) — saat ini menampilkan peta umum area Gresik. Setelah alamat pasti
-  tersedia, ganti `src` iframe dengan link embed Google Maps yang sesuai (Google Maps → Bagikan → Sematkan peta).
+- **Peta lokasi** (section `#kontak`) — **Asli**, sudah menunjuk titik koordinat pasti (-7.352661,112.576803,
+  Desa Banjaran, Kec. Driyorejo). Kalau lokasi pindah/berubah, ganti angka lat,lng di `src` iframe.
 - **Link sosial media** (Instagram/Facebook/TikTok, di top bar & footer) — masih `href="#"`, ganti dengan
   URL profil asli.
 - **Structured data LocalBusiness** (`<script type="application/ld+json">` di `<head>` index.html) — field
-  `telephone` sudah nomor asli (Rendra), tapi `address` masih placeholder, samakan begitu alamat asli ada.
+  `telephone`, `address`, dan `geo` sudah data asli.
 
 ## 📈 Tracking iklan (Google Ads / GA4 / Meta Pixel)
 
