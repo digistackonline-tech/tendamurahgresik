@@ -15,7 +15,7 @@ const CONFIG = {
   waNumber2: "62895351287502", // Sherly Charima Dewi
   phoneDisplay2: "0895-3512-87502",
   waName2: "Sherly Charima Dewi",
-  address: "Desa Banjaran, Kec. Driyorejo, Kabupaten Gresik, Jawa Timur 61177", // Asli (dari titik lokasi), nama jalan/nomor bisa dilengkapi lagi
+  address: "Jl. Raya Driyorejo, Dusun Wates, Cangkir, Kec. Driyorejo, Kabupaten Gresik, Jawa Timur 61177", // Asli, disamakan persis dengan Google Business Profile
   email: "info@tendamurahgresik.com", // TODO: email asli jika berbeda
   hours: "Senin - Sabtu, 08.00 - 17.00 WIB", // TODO: jam operasional asli
 
