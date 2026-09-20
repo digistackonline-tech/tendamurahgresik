@@ -62,7 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
   initStatCounters();
   initHeaderShadow();
   initBackToTop();
-  document.getElementById("year").textContent = new Date().getFullYear();
+  const yr = document.getElementById("year");
+  if (yr) yr.textContent = new Date().getFullYear();
 });
 
 /* Isi otomatis semua elemen dengan data-config sesuai CONFIG */
