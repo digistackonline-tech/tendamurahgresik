@@ -178,11 +178,15 @@ function initMobileNav() {
   if (!toggle) return;
 
   toggle.addEventListener("click", () => {
-    navbar.classList.toggle("is-open");
+    const isOpen = navbar.classList.toggle("is-open");
+    toggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
   });
 
   menu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => navbar.classList.remove("is-open"));
+    link.addEventListener("click", () => {
+      navbar.classList.remove("is-open");
+      toggle.setAttribute("aria-expanded", "false");
+    });
   });
 }
 
@@ -192,8 +196,15 @@ function initAccordion() {
     header.addEventListener("click", () => {
       const item = header.closest(".accordion-item");
       const wasActive = item.classList.contains("is-active");
-      item.parentElement.querySelectorAll(".accordion-item").forEach((i) => i.classList.remove("is-active"));
-      if (!wasActive) item.classList.add("is-active");
+      item.parentElement.querySelectorAll(".accordion-item").forEach((i) => {
+        i.classList.remove("is-active");
+        const btn = i.querySelector(".accordion-header");
+        if (btn) btn.setAttribute("aria-expanded", "false");
+      });
+      if (!wasActive) {
+        item.classList.add("is-active");
+        header.setAttribute("aria-expanded", "true");
+      }
     });
   });
 }
