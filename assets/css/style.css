@@ -211,7 +211,7 @@ p { margin: 0 0 1em; }
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 1024 / 764;
   object-fit: cover;
   transition: transform .45s ease;
 }
