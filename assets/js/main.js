@@ -19,6 +19,7 @@ const CONFIG = {
   waDefaultMessage: "Halo Wiguna Tenda,saya ingin bertanya terkait dengan  informasi Tenda:\n\nhttps://tendamurahgresik.com/",
   email: "wigunatenda@gmail.com", // Asli
   hours: "Senin - Sabtu, 08.00 - 17.00 WIB", // TODO: jam operasional asli
+  mapsUrl: "https://maps.app.goo.gl/rk2h2NR67kL8tHrf9", // Google Maps resmi
 
   // --- Tracking iklan (opsional, kosongkan jika belum punya akun) ---
   // Dipakai untuk mengukur konversi (klik WhatsApp) dari Google Ads.
