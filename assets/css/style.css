@@ -247,19 +247,24 @@ p { margin: 0 0 1em; }
 /* ---------- About ---------- */
 .about { display: grid; grid-template-columns: 0.95fr 1.05fr; gap: 54px; align-items: center; }
 .about__visual { position: relative; width: 100%; }
+.about__photo-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 .about__frame {
   position: relative;
   border-radius: var(--radius);
   overflow: hidden;
   border: 2px solid rgba(255,206,0,0.5);
-  box-shadow: 0 20px 48px rgba(23,15,10,0.16);
+  box-shadow: 0 16px 40px rgba(23,15,10,0.14);
   background: var(--dark-soft);
 }
 .about__photo {
   width: 100%;
   height: auto;
   display: block;
-  aspect-ratio: 1024 / 461;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   transition: transform .45s ease;
 }
