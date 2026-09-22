@@ -15,7 +15,8 @@ const CONFIG = {
   waNumber2: "62895351287502", // Sherly Charima Dewi
   phoneDisplay2: "0895-3512-87502",
   waName2: "Sherly Charima Dewi",
-  address: "Jl. Raya Driyorejo, Dusun Wates, Cangkir, Kec. Driyorejo, Kabupaten Gresik, Jawa Timur 61177", // Asli, disamakan persis dengan Google Business Profile
+  address: "Dsn Karangasem DS karangandong Rt 03 RW 04, Kecamatan Driyorejo kab Gresik Jawa Timur",
+  waDefaultMessage: "Halo Wiguna Tenda,saya ingin bertanya terkait dengan  informasi Tenda:\n\nhttps://tendamurahgresik.com/",
   email: "wigunatenda@gmail.com", // Asli
   hours: "Senin - Sabtu, 08.00 - 17.00 WIB", // TODO: jam operasional asli
 
@@ -94,7 +95,7 @@ function initWaLinks() {
       el.title = "Nomor WhatsApp belum tersedia";
       return;
     }
-    const msg = el.getAttribute("data-wa-message") || "Halo Wiguna Tenda, saya ingin bertanya.";
+    const msg = el.getAttribute("data-wa-message") || CONFIG.waDefaultMessage;
     el.setAttribute("href", `https://wa.me/${number}?text=${encodeURIComponent(msg)}`);
     el.setAttribute("target", "_blank");
     el.setAttribute("rel", "noopener");
