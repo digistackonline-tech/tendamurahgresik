@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Halaman Tidak Ditemukan (404) | Wiguna Tenda Gresik</title>
+<meta name="robots" content="noindex, follow">
+<link rel="icon" href="assets/img/favicon.png" type="image/png">
+<link rel="apple-touch-icon" href="assets/img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+<style>
+  .error-page {
+    padding: 100px 0 80px;
+    text-align: center;
+    background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+    min-height: 65vh;
+    display: flex;
+    align-items: center;
+  }
+  .error-card {
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 24px;
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.03);
+    border: 1px solid #f1f5f9;
+  }
+  .error-code {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    color: var(--primary, #0284c7);
+    margin-bottom: 16px;
+    letter-spacing: -2px;
+  }
+  .error-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 12px;
+  }
+  .error-desc {
+    color: #64748b;
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 32px;
+  }
+  .error-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    justify-content: center;
+  }
+  .error-quicklinks {
+    margin-top: 32px;
+    padding-top: 24px;
+    border-top: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #64748b;
+  }
+  .error-quicklinks a {
+    color: var(--primary, #0284c7);
+    text-decoration: underline;
+    margin: 0 8px;
+    font-weight: 500;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="container topbar__inner">
+    <div class="topbar__contact">
+      <a href="#" id="topbarPhoneLink" class="topbar__item">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.5 21 3 13.5 3 4c0-.6.4-1 1-1h3.2c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+        <span data-config="phoneDisplay">0895-1053-2984</span>
+      </a>
+      <a href="#" id="topbarEmailLink" class="topbar__item topbar__item--hide-sm">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm0 2v.01L12 13l8-6.99V6H4zm16 2.24-7.39 6.46a1 1 0 0 1-1.22 0L4 8.24V18h16V8.24z"/></svg>
+        <span data-config="email">wigunatenda@gmail.com</span>
+      </a>
+      <span class="topbar__item topbar__item--hide-sm">
+        <svg viewBox="0 0 24 24" class="icon"><path d="M12 2a7 7 0 0 0-7 7c0 5.25 7 13 7 13s7-7.75 7-13a7 7 0 0 0-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+        <span>Gresik, Jawa Timur</span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAVBAR ===== -->
+<header class="navbar" id="navbar">
+  <div class="container navbar__inner">
+    <a href="index.html" class="navbar__brand">
+      <img src="assets/img/logo.jpeg" alt="Logo Wiguna Tenda" class="navbar__logo">
+    </a>
+
+    <nav class="navbar__nav" id="navMenu">
+      <a href="index.html" class="nav-link">Beranda</a>
+      <a href="index.html#tentang" class="nav-link">Tentang Kami</a>
+      <a href="layanan.html" class="nav-link">Layanan</a>
+      <a href="galeri.html" class="nav-link">Galeri</a>
+      <a href="index.html#kontak" class="nav-link">Kontak</a>
+    </nav>
+
+    <a href="#" class="btn btn--primary btn--sm navbar__cta js-wa-link" data-wa-message="Halo Wiguna Tenda, saya ingin bertanya terkait informasi tenda.">
+      <svg viewBox="0 0 32 32" class="icon"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.5.66 4.83 1.8 6.86L4 29l7.32-1.9a12.9 12.9 0 0 0 4.7.88h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.94h-.01a10.9 10.9 0 0 1-5.56-1.53l-.4-.24-4.34 1.13 1.16-4.24-.26-.43a10.9 10.9 0 0 1-1.68-5.8c0-6.03 4.9-10.93 10.94-10.93 2.92 0 5.66 1.14 7.73 3.2a10.85 10.85 0 0 1 3.2 7.74c0 6.03-4.9 10.93-10.93 10.93zm5.98-8.18c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.16-.22.33-.85 1.06-1.04 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.66-1.65-.98-.87-1.64-1.95-1.83-2.28-.19-.33-.02-.5.14-.67.15-.15.33-.38.5-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.73-1.77-1-2.42-.26-.63-.53-.55-.73-.56h-.62c-.22 0-.57.08-.86.41-.3.33-1.13 1.1-1.13 2.7 0 1.6 1.16 3.14 1.32 3.36.16.22 2.29 3.5 5.54 4.9.77.34 1.38.54 1.85.68.78.25 1.48.21 2.04.13.62-.1 1.93-.79 2.2-1.55.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38z"/></svg>
+      Chat WhatsApp
+    </a>
+
+    <button class="navbar__toggle" id="navToggle" aria-label="Buka menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- ===== 404 CONTENT ===== -->
+<main class="error-page">
+  <div class="container">
+    <div class="error-card">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Halaman Tidak Ditemukan</h1>
+      <p class="error-desc">
+        Halaman yang Anda tuju tidak ditemukan atau alamat URL mungkin salah ketik. Silakan kembali ke beranda atau langsung berkonsultasi dengan tim Wiguna Tenda.
+      </p>
+      <div class="error-actions">
+        <a href="index.html" class="btn btn--primary">
+          Kembali ke Beranda
+        </a>
+        <a href="layanan.html" class="btn btn--outline">
+          Lihat Katalog Layanan
+        </a>
+        <a href="#" class="btn btn--primary js-wa-link" data-wa-message="Halo Wiguna Tenda, saya mengalami kendala mencari informasi di website Anda.">
+          Konsultasi WhatsApp
+        </a>
+      </div>
+      <div class="error-quicklinks">
+        Atau buka: 
+        <a href="index.html#tentang">Tentang Kami</a> &middot;
+        <a href="galeri.html">Foto Portofolio</a> &middot;
+        <a href="index.html#kontak">Kontak Langsung</a>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container footer__inner">
+    <div class="footer__brand">
+      <img src="assets/img/logo.jpeg" alt="Logo Wiguna Tenda" class="footer__logo">
+      <p>Perusahaan produsen tenda profesional berpengalaman 11+ tahun. Produksi dan penjualan tenda serta terpal custom, presisi dan bergaransi.</p>
+    </div>
+
+    <div class="footer__col">
+      <h4>Navigasi</h4>
+      <a href="index.html">Beranda</a>
+      <a href="index.html#tentang">Tentang Kami</a>
+      <a href="layanan.html">Layanan</a>
+      <a href="galeri.html">Galeri</a>
+      <a href="index.html#kontak">Kontak</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Produksi Tenda</h4>
+      <a href="layanan.html#tenda-kerucut">Tenda Kerucut</a>
+      <a href="layanan.html#tenda-limas">Tenda Limas</a>
+      <a href="layanan.html#tenda-promosi">Tenda Promosi / Cafe</a>
+      <a href="layanan.html#tenda-lipat">Tenda Lipat</a>
+      <a href="layanan.html#kanopi-kain">Kanopi Kain</a>
+    </div>
+
+    <div class="footer__col">
+      <h4>Hubungi Kami</h4>
+      <p><span data-config="address">Dsn Karangasem DS karangandong Rt 03 RW 04, Kecamatan Driyorejo kab Gresik Jawa Timur</span></p>
+      <p>WhatsApp: <span data-config="phoneDisplay">0895-1053-2984</span></p>
+      <p>Email: <span data-config="email">wigunatenda@gmail.com</span></p>
+      <p><span data-config="hours">Senin - Sabtu, 08.00 - 17.00 WIB</span></p>
+    </div>
+  </div>
+
+  <div class="footer__bottom">
+    <div class="container footer__bottom-inner">
+      <p>&copy; <span id="year"></span> Wiguna Tenda. Hak Cipta Dilindungi.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Floating WhatsApp Button -->
+<a href="#" class="floating-wa js-wa-link" data-wa-message="Halo Wiguna Tenda, saya ingin bertanya terkait informasi tenda." aria-label="Chat WhatsApp">
+  <svg viewBox="0 0 32 32" class="icon"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.5.66 4.83 1.8 6.86L4 29l7.32-1.9a12.9 12.9 0 0 0 4.7.88h.01c6.62 0 12.02-5.4 12.02-12.02C28.05 8.4 22.65 3 16.02 3zm0 21.94h-.01a10.9 10.9 0 0 1-5.56-1.53l-.4-.24-4.34 1.13 1.16-4.24-.26-.43a10.9 10.9 0 0 1-1.68-5.8c0-6.03 4.9-10.93 10.94-10.93 2.92 0 5.66 1.14 7.73 3.2a10.85 10.85 0 0 1 3.2 7.74c0 6.03-4.9 10.93-10.93 10.93zm5.98-8.18c-.33-.16-1.93-.95-2.23-1.06-.3-.11-.52-.16-.73.16-.22.33-.85 1.06-1.04 1.27-.19.22-.38.24-.71.08-.33-.16-1.4-.52-2.66-1.65-.98-.87-1.64-1.95-1.83-2.28-.19-.33-.02-.5.14-.67.15-.15.33-.38.5-.57.16-.19.22-.33.33-.55.11-.22.05-.41-.03-.57-.08-.16-.73-1.77-1-2.42-.26-.63-.53-.55-.73-.56h-.62c-.22 0-.57.08-.86.41-.3.33-1.13 1.1-1.13 2.7 0 1.6 1.16 3.14 1.32 3.36.16.22 2.29 3.5 5.54 4.9.77.34 1.38.54 1.85.68.78.25 1.48.21 2.04.13.62-.1 1.93-.79 2.2-1.55.27-.76.27-1.42.19-1.55-.08-.14-.3-.22-.62-.38z"/></svg>
+</a>
+
+<script src="assets/js/main.js"></script>
+</body>
+</html>
