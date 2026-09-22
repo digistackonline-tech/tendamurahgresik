@@ -23,8 +23,8 @@ const CONFIG = {
   // --- Tracking iklan (opsional, kosongkan jika belum punya akun) ---
   // Dipakai untuk mengukur konversi (klik WhatsApp) dari Google Ads.
   // Isi setelah kampanye Google Ads dibuat: Tools & Settings > Conversions.
-  googleAdsId: "", // contoh: "AW-XXXXXXXXX"
-  googleAdsConversionLabel: "", // contoh: "AbCdEfGhIjKlMnOp"
+  googleAdsId: "AW-18467361986",
+  googleAdsConversionLabel: "TuUtCKD5koEDEMKp9uVE",
   ga4Id: "", // opsional, Measurement ID Google Analytics 4, contoh: "G-XXXXXXXXXX"
   metaPixelId: "", // opsional, Meta (Facebook/Instagram) Pixel ID, jika nanti pasang iklan FB/IG
 };
@@ -152,6 +152,8 @@ function trackWaClick() {
   if (window.gtag && CONFIG.googleAdsId && CONFIG.googleAdsConversionLabel) {
     window.gtag("event", "conversion", {
       send_to: `${CONFIG.googleAdsId}/${CONFIG.googleAdsConversionLabel}`,
+      value: 1.0,
+      currency: "IDR",
     });
   }
   if (window.fbq) window.fbq("track", "Contact");
