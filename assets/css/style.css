@@ -566,19 +566,22 @@ p { margin: 0 0 1em; }
 }
 .gallery-card__img-wrap {
   position: relative;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 4 / 3;
   overflow: hidden;
-  background: var(--dark-soft);
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .gallery-card__img-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   transition: transform .45s ease;
   display: block;
 }
 .gallery-card:hover .gallery-card__img-wrap img {
-  transform: scale(1.06);
+  transform: scale(1.05);
 }
 .gallery-card__body {
   padding: 24px 22px 24px;
