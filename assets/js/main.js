@@ -25,7 +25,7 @@ const CONFIG = {
   // Dipakai untuk mengukur konversi (klik WhatsApp) dari Google Ads.
   // Isi setelah kampanye Google Ads dibuat: Tools & Settings > Conversions.
   googleAdsId: "AW-18467361986",
-  googleAdsConversionLabel: "TuUtCKD5koEDEMKp9uVE",
+  googleAdsConversionLabel: "TuUtCKD5koEdEMKp9uVE",
   ga4Id: "", // opsional, Measurement ID Google Analytics 4, contoh: "G-XXXXXXXXXX"
   metaPixelId: "", // opsional, Meta (Facebook/Instagram) Pixel ID, jika nanti pasang iklan FB/IG
 };

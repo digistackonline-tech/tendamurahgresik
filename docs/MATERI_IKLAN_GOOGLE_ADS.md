@@ -109,4 +109,5 @@ gaji
 - **Opsi Lokasi:** Pilih *"Presence: People in or regularly in your targeted locations"*.
 - **Bidding:** *Maximize Clicks* dengan batas CPC maksimum Rp 1.500 – Rp 2.500.
 - **Jadwal Iklan:** Senin – Sabtu, pukul 08.00 – 17.00 WIB.
-- **Tracking Konversi:** Otomatis aktif via Tag Google `AW-18467361986` dan Label `TuUtCKD5koEDEMKp9uVE` saat pengunjung mengklik tombol WhatsApp.
+- **Tracking Konversi:** Otomatis aktif via Tag Google `AW-18467361986` dan Label `TuUtCKD5koEdEMKp9uVE` saat pengunjung mengklik tombol WhatsApp.
+
