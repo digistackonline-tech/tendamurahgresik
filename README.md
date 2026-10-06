@@ -25,10 +25,10 @@ Semua data kontak diatur di **satu tempat**: [assets/js/main.js](assets/js/main.
 
 | Field | Nilai saat ini | Keterangan |
 |---|---|---|
-| `waNumber` | `62895351287502` | **Asli** — Sherly Charima Dewi, admin utama. Dipakai semua tombol WA umum di halaman. |
-| `phoneDisplay` | `0895-3512-87502` | **Asli** — tampilan nomor Sherly |
-| `waNumber2` | `6289510532984` | **Asli** — Rendra Oktaviantoro, admin kedua. Dipakai khusus tombol dengan `data-wa-number-key="waNumber2"` (section Kontak). |
-| `phoneDisplay2` | `0895-1053-2984` | **Asli** — tampilan nomor Rendra |
+| `waNumber` | `6289510532984` | **Asli** — Rendra Oktaviantoro, admin utama. Dipakai semua tombol WA umum di halaman. |
+| `phoneDisplay` | `0895-1053-2984` | **Asli** — tampilan nomor Rendra |
+| `waNumber2` | `62895351287502` | **Asli** — Sherly Charima Dewi, admin kedua. Dipakai khusus tombol dengan `data-wa-number-key="waNumber2"` (section Kontak / tombol Admin 2). |
+| `phoneDisplay2` | `0895-3512-87502` | **Asli** — tampilan nomor Sherly |
 | `address` | `Desa Banjaran, Kec. Driyorejo, ...` | **Asli** (level desa/kecamatan, dari titik lokasi -7.352661,112.576803). Nama jalan & nomor bisa dilengkapi lagi kalau ada. |
 | `email` | `wigunatenda@gmail.com` | **Asli** |
 | `hours` | `Senin - Sabtu, 08.00 - 17.00 WIB` | ⚠️ Masih **placeholder** |

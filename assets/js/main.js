@@ -7,14 +7,14 @@ const CONFIG = {
   // Nomor WhatsApp format internasional TANPA tanda "+" (mis. 62812xxxxxxx).
   // Dipakai oleh SEMUA tombol "Chat WhatsApp" umum di halaman (navbar, hero,
   // kartu layanan, galeri, tombol mengambang) — admin utama.
-  waNumber: "62895351287502", // Sherly Charima Dewi
-  phoneDisplay: "0895-3512-87502",
-  waName: "Sherly Charima Dewi",
+  waNumber: "6289510532984", // Rendra Oktaviantoro (Admin Utama)
+  phoneDisplay: "0895-1053-2984",
+  waName: "Rendra Oktaviantoro",
   // Admin kedua — dipakai khusus oleh tombol berlabel data-wa-number-key="waNumber2"
   // (dipasang di section Kontak, mengikuti pola "WhatsApp Admin 1/2").
-  waNumber2: "6289510532984", // Rendra Oktaviantoro
-  phoneDisplay2: "0895-1053-2984",
-  waName2: "Rendra Oktaviantoro",
+  waNumber2: "62895351287502", // Sherly Charima Dewi (Admin 2)
+  phoneDisplay2: "0895-3512-87502",
+  waName2: "Sherly Charima Dewi",
   address: "Dsn Karangasem DS karangandong Rt 03 RW 04, Kecamatan Driyorejo kab Gresik Jawa Timur",
   waDefaultMessage: "Halo Wiguna Tenda,saya ingin bertanya terkait dengan  informasi Tenda:\n\nhttps://tendamurahgresik.com/",
   email: "wigunatenda@gmail.com", // Asli
