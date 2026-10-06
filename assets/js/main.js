@@ -121,7 +121,7 @@ function initPhoneLink() {
    ID-nya sudah diisi di CONFIG. Selama masih kosong, tidak ada script
    pihak ketiga yang dimuat sama sekali. */
 function initTracking() {
-  if (CONFIG.googleAdsId || CONFIG.ga4Id) {
+  if (!window.gtag && (CONFIG.googleAdsId || CONFIG.ga4Id)) {
     const primaryId = CONFIG.googleAdsId || CONFIG.ga4Id;
     const script = document.createElement("script");
     script.async = true;
@@ -133,6 +133,8 @@ function initTracking() {
     gtag("js", new Date());
     if (CONFIG.googleAdsId) gtag("config", CONFIG.googleAdsId);
     if (CONFIG.ga4Id) gtag("config", CONFIG.ga4Id);
+  } else if (window.gtag && CONFIG.ga4Id) {
+    window.gtag("config", CONFIG.ga4Id);
   }
 
   if (CONFIG.metaPixelId) {
