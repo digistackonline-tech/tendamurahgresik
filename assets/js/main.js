@@ -150,8 +150,12 @@ function initTracking() {
   }
 }
 
-/* Kirim event konversi saat tombol WhatsApp diklik (lead untuk Google Ads/Meta). */
-function trackWaClick() {
+/* Kirim event konversi saat tombol WhatsApp diklik (lead untuk Google Ads / GA4 / Meta). */
+function trackWaClick(e) {
+  const target = e?.currentTarget;
+  const buttonText = target ? (target.textContent || "").trim() : "WhatsApp Button";
+
+  // 1. Google Ads Conversion
   if (window.gtag && CONFIG.googleAdsId && CONFIG.googleAdsConversionLabel) {
     window.gtag("event", "conversion", {
       send_to: `${CONFIG.googleAdsId}/${CONFIG.googleAdsConversionLabel}`,
@@ -159,6 +163,18 @@ function trackWaClick() {
       currency: "IDR",
     });
   }
+
+  // 2. Google Analytics 4 (GA4) Generate Lead Event
+  if (window.gtag && CONFIG.ga4Id) {
+    window.gtag("event", "generate_lead", {
+      event_category: "Engagement",
+      event_label: buttonText,
+      value: 1.0,
+      currency: "IDR",
+    });
+  }
+
+  // 3. Meta Pixel (jika aktif)
   if (window.fbq) window.fbq("track", "Contact");
 }
 
