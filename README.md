@@ -69,7 +69,7 @@ Semua diatur di `assets/js/main.js`, bagian `CONFIG`:
 |---|---|
 | `googleAdsId` | Setelah kampanye Google Ads dibuat. Ambil di **Tools & Settings → Conversions** (format `AW-XXXXXXXXX`). |
 | `googleAdsConversionLabel` | Label dari action konversi yang sama (mis. "Kirim WhatsApp"). |
-| `ga4Id` | Opsional, Measurement ID dari Google Analytics 4 (`G-XXXXXXXXXX`) untuk melihat traffic secara umum. |
+| `ga4Id` | **Terpasang (`G-DR6KC2P479`)** — Google Analytics 4 resmi Wiguna Tenda untuk tracking traffic & konversi lead WhatsApp. |
 | `metaPixelId` | Opsional, jika nanti juga pasang iklan Facebook/Instagram. |
 
 Selama field-field ini masih kosong, **tidak ada script tracking pihak ketiga yang dimuat sama sekali**

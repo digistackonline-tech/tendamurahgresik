@@ -26,7 +26,7 @@ const CONFIG = {
   // Isi setelah kampanye Google Ads dibuat: Tools & Settings > Conversions.
   googleAdsId: "AW-18467361986",
   googleAdsConversionLabel: "TuUtCKD5koEdEMKp9uVE",
-  ga4Id: "", // opsional, Measurement ID Google Analytics 4, contoh: "G-XXXXXXXXXX"
+  ga4Id: "G-DR6KC2P479", // Measurement ID Google Analytics 4 resmi Wiguna Tenda
   metaPixelId: "", // opsional, Meta (Facebook/Instagram) Pixel ID, jika nanti pasang iklan FB/IG
 };
 
